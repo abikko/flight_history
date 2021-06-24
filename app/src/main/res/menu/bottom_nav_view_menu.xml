@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/savedFlightHistoryFragment"
+        android:icon="@drawable/ic_bg_white_save_24dp"
+        android:title="@string/saved_flight_history" />
+    <item
+        android:id="@+id/flightHistoryFragment"
+        android:icon="@drawable/ic_bg_white_history_24dp"
+        android:title="@string/flight_history" />
+</menu>

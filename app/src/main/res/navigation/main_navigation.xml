@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/flightHistoryFragment">
+
+    <fragment
+        android:id="@+id/flightHistoryFragment"
+        android:name="kz.edu.astanait.android.ilonmaskflighthistory.ui.flight_history.FlightHistoryFragment"
+        android:label="@string/flight_history"
+        tools:layout="@layout/fragment_flight_history">
+        <action
+            android:id="@+id/action_flightHistoryFragment_to_currentFlightHistoryFragment"
+            app:destination="@id/currentFlightHistoryFragment" />
+      </fragment>
+    <fragment
+        android:id="@+id/currentFlightHistoryFragment"
+        android:name="kz.edu.astanait.android.ilonmaskflighthistory.ui.current_flight_history.CurrentFlightHistoryFragment"
+        android:label="Current flight history"
+        tools:layout="@layout/fragment_current_flight_history">
+        <argument
+            android:name="flightHistory"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
+    <fragment
+        android:id="@+id/savedFlightHistoryFragment"
+        android:name="kz.edu.astanait.android.ilonmaskflighthistory.ui.saved_flight_history.SavedFlightHistoryFragment"
+        android:label="@string/saved_flight_history"
+        tools:layout="@layout/fragment_saved_flight_history"/>
+</navigation>

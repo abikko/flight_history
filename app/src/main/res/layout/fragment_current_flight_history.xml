@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="flightHistory"
+            type="kz.edu.astanait.android.ilonmaskflighthistory.model.pojo.FlightHistory" />
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.current_flight_history.CurrentFlightHistoryFragment">
+
+        <ImageView
+            android:id="@+id/iv_missionPatch"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/white"
+            app:imageUrl="@{flightHistory.links.missionPatch}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_missionPatch">
+
+            <TextView
+                android:id="@+id/tv_details"
+                style="@style/TextViewFlightHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Details:` + flightHistory.details}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_rocketName"
+                style="@style/TextViewFlightHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Rocket name:` + flightHistory.rocket.rocketName}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_details" />
+
+            <TextView
+                android:id="@+id/tv_missionName"
+                style="@style/TextViewFlightHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Mission name:` + flightHistory.missionName}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_rocketName" />
+
+            <TextView
+                android:id="@+id/tv_launchDate"
+                style="@style/TextViewFlightHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Launch date:` + flightHistory.launchDateLocal}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_missionName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>

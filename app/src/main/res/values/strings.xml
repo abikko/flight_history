@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">IlonMaskFlightHistory</string>
+    <string name="saved_flight_history">Saved Flight History</string>
+    <string name="flight_history">Flight history</string>
+    <string name="flight_history_image">flight_history_image</string>
+</resources>
